@@ -3,31 +3,33 @@ const { Schema, model } = require("mongoose");
 const inmuebleSchema = new Schema(
   {
     piso: {
-      type: String,
+      type: Number,
+      minLength: 3,
+      maxLength: 25,
     },
     letra: {
       type: String,
+      maxLength: 1,
     },
     extension: {
       type: Number,
-      require: [true, "The name is required"],
+      required: [true, "The name is required"],
     },
     habitaciones: {
       type: Number,
-      require: [true, "The number of rooms are required"],
+      required: [true, "The number of rooms are required"],
     },
     alquilado: {
       type: Boolean,
-      require: [true, "Rented field is require"],
+      required: [true, "Rented field is require"],
     },
     propietario: {
       type: String,
-      require: [true, "Owner´s name  is required"],
+      required: [true, "Owners name  is required"],
     },
     email: {
       type: String,
-      require: [true, "Email is required"],
-      unique: true,
+      required: [true, "Email is required"],
       match: [
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\. [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         "Please add a valid email address.",

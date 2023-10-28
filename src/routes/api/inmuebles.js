@@ -1,6 +1,16 @@
 const router = require("express").Router();
+const {
+  getAllInmuebles,
+  getInmuebleById,
+  createInmueble,
+  updateInmueble,
+  deleteInmueble,
+} = require("../../controller/inmueble.controller");
 
-router.get("/");
-router.post("/");
-router.put("/:inmuebleId");
-router.delete("/:inmuebleId");
+router.get("/", getAllInmuebles);
+router.get("/:inmuebleId", getInmuebleById);
+router.post("/", createInmueble);
+router.put("/:inmuebleId", updateInmueble);
+router.delete("/:inmuebleId", deleteInmueble);
+
+module.exports = router;
