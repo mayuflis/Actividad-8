@@ -2,6 +2,7 @@ const http = require("node:http");
 const app = require("./src/app");
 
 require("dotenv").config();
+require("./src/config/config.db");
 
 const server = http.createServer(app);
 
