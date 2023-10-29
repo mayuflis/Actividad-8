@@ -1,5 +1,25 @@
+/**
+ * Módulo que define el esquema de un inmueble utilizando Mongoose.
+ * @module models/inmuebleModel
+ */
 const { Schema, model } = require("mongoose");
 
+/**
+ * Definición del esquema de inmueble.
+ * @typedef {Object} InmuebleSchema
+ * @property {Number} piso - El número de piso del inmueble (entre 3 y 25 caracteres).
+ * @property {String} letra - La letra del inmueble (máximo 1 caracter).
+ * @property {Number} extension - La extensión del inmueble (obligatorio).
+ * @property {Number} habitaciones - El número de habitaciones del inmueble (obligatorio).
+ * @property {Boolean} alquilado - Indica si el inmueble está alquilado (obligatorio).
+ * @property {String} propietario - El nombre del propietario del inmueble (obligatorio).
+ * @property {String} email - La dirección de correo electrónico del propietario del inmueble (obligatorio).
+ */
+
+/**
+ * Esquema de mongoose para el modelo de inmueble.
+ * @type {InmuebleSchema}
+ */
 const inmuebleSchema = new Schema(
   {
     piso: {
@@ -43,4 +63,8 @@ const inmuebleSchema = new Schema(
   }
 );
 
+/**
+ * Modelo de mongoose para inmueble.
+ * @type {model}
+ */
 module.exports = model("inmueble", inmuebleSchema);

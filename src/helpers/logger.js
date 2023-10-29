@@ -1,3 +1,8 @@
+/**
+ * Módulo para la gestión de registros de logs utilizando Log4js.
+ * @module helpers/logger
+ */
+
 // Importa el módulo log4js para el registro de logs.
 const log4js = require("log4js");
 
@@ -25,8 +30,17 @@ log4js.configure({
     },
   },
 });
-//Obtención un logger para mostrar información general
+//Obtención de un logger para mostrar información general.
+/**
+ * Logger para registrar información general.
+ * @type {Logger}
+ */
 const infoLogger = log4js.getLogger("main");
-//Obtención un logger para mostrar información realcionada con los errores
+
+//Obtención de un logger para mostrar información relacionada con los errores.
+/**
+ * Logger para registrar información relacionada con errores.
+ * @type {Logger}
+ */
 const erroresLogger = log4js.getLogger("errores");
 module.exports = { infoLogger, erroresLogger };
